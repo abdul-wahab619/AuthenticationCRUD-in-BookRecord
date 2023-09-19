@@ -1,0 +1,15 @@
+<%= form_tag book_records_path, method: :get, class: "search-form" do %>
+  <div class="field">
+    <%= label_tag :min_price, "Minimum Price" %>
+    <%= number_field_tag :min_price, params[:min_price] %>
+  </div>
+  
+  <div class="field">
+    <%= label_tag :max_price, "Maximum Price" %>
+    <%= number_field_tag :max_price, params[:max_price] %>
+  </div>
+  
+  <div class="actions">
+    <%= submit_tag "Filter", class: "btn btn-primary" %>
+  </div>
+<% end %>

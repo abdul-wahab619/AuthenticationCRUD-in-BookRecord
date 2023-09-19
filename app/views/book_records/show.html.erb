@@ -1,0 +1,32 @@
+<div class="col-lg-12">
+  <div class="card rounded-0 mt-5 mb-5">
+    <div class="card-body">
+      <h2 class="text-center">Showing Book Record</h2>
+    </div>
+  </div>
+
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Author</th>
+        <th>Author Address</th>
+        <th>Price</th>
+        <th>Book ID</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><%= @book_record.title %></td>
+        <td><%= @book_record.content %></td>
+        <td><%= @book_record.author %></td>
+        <td><%= @book_record.author_address %></td>
+        <td><%= @book_record.price %></td>
+        <td><%= @book_record.book_id %></td>
+        <td><%= link_to 'Back', book_records_path, class: 'btn btn-primary' %></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

@@ -1,0 +1,58 @@
+<div class="col-lg-12">
+  <div class="card rounded-0 mt-5 mb-5">
+    <div class="card-body">
+      <h2 class="text-center">Update Book Record</h2>
+    </div>
+  </div>
+
+  <% if @book_record.errors.any? %>
+    <div class="alert alert-danger">
+      <ul>
+        <% @book_record.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <%= form_for @book_record, class: "form-horizontal" do |form| %>
+    <table class="table table-bordered">
+      <tbody>
+        <tr>
+          <th class="text-right"><%= form.label :title, "Title" %></th>
+          <td><%= form.text_field :title, class: "form-control" %></td>
+        </tr>
+
+        <tr>
+          <th class="text-right"><%= form.label :content, "Content" %></th>
+          <td><%= form.text_area :content, class: "form-control" %></td>
+        </tr>
+
+        <tr>
+          <th class="text-right"><%= form.label :author, "Author" %></th>
+          <td><%= form.text_field :author, class: "form-control" %></td>
+        </tr>
+
+        <tr>
+          <th class="text-right"><%= form.label :author_address, "Author Address" %></th>
+          <td><%= form.text_field :author_address, class: "form-control" %></td>
+        </tr>
+
+        <tr>
+          <th class="text-right"><%= form.label :price, "Price" %></th>
+          <td><%= form.text_field :price, class: "form-control" %></td>
+        </tr>
+
+        <tr>
+          <th class="text-right"><%= form.label :book_id, "Book ID" %></th>
+          <td><%= form.text_field :book_id, class: "form-control" %></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="text-center">
+      <%= link_to 'Back', book_records_path, class: 'btn btn-primary' %></td>
+      <%= form.submit "Update Book Record", class: "btn btn-primary" %>
+    </div>
+  <% end %>
+</div>
